@@ -1,0 +1,21 @@
+.c-header {
+  background-color: #03a9f4;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  box-shadow: #0288D1 0 1px 3px;
+
+  &__menu {
+    display: flex;
+    font-size: 1.25rem;
+
+    a:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+}

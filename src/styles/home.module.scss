@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
+@import "globals";
+
+.p-post {
+  &__title {
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+    color: #212121;
+  }
+
+  &__newPosts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    padding: 0;
+  }
+
+  &__link {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #ffc107;
+    text-align: right;
+
+    a {
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #ffc107;
+      border-radius: 4px;
+    }
+  }
+}
+
+.p-about {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__img {
+    width: 30rem;
+    height: 22.5rem;
+    background-color: grey;
+  }
+
+  &__content {
+    width: 30rem;
+    height: 22.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 0 1rem 1rem;
+    color: #212121;
+
+    &-title {
+      font-size: 1.75rem;
+    }
+
+    &-link {
+      text-align: right;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: #ffc107;
+
+      a {
+        padding: 0.75rem 1rem;
+        border: 1.5px solid #ffc107;
+        border-radius: 4px;
+      }
+    }
+  }
+}

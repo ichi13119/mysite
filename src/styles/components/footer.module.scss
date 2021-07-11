@@ -1,0 +1,28 @@
+.c-footer {
+  border-top: 1px solid #ffc107;
+  text-align: center;
+
+  &__links {
+    width: 5rem;
+    margin: 1rem auto 0;
+    display: flex;
+    justify-content: center;
+    color: #0085ff;
+    list-style: none;
+    padding: 0;
+
+    li {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__copy {
+    color: #ffc107;
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+}
