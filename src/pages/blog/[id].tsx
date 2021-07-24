@@ -1,6 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 
 import { client } from "libs/cmsClient";
+
 import { fetchFromCMS, Post } from "types";
 
 type Props = {
@@ -8,7 +10,19 @@ type Props = {
 };
 
 const Blog: React.FC<Props> = ({ blog }) => {
-  return <div>{blog.title}</div>;
+  return (
+    <>
+      <Head>
+        <title>{blog.title}</title>
+      </Head>
+      <h1>{blog.title}</h1>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `${blog.body}`,
+        }}
+      ></div>
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

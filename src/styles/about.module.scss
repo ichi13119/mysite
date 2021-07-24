@@ -1,0 +1,38 @@
+.p-about {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 3rem;
+    font-weight: 400;
+
+    @media only screen and (max-width: 1024px) {
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+    @media only screen and (max-width: 599px) {
+      font-size: .75rem;
+      margin-bottom: .5rem;
+    }
+  }
+
+  &__summary {
+    padding-right: 10rem;
+
+    @media only screen and (max-width: 1024px) {
+      padding-right: 5rem;
+      padding-bottom: 2rem;
+
+      h2 {
+        font-size: 1rem;
+      }
+    }
+
+    @media only screen and (max-width: 599px) {
+      padding-right: 0;
+      padding-bottom: 2rem;
+
+      h2 {
+        font-size: .5rem;
+      }
+    }
+  }
+}

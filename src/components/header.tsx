@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import styles from "../styles/components/Header.module.scss";
+import styles from "../styles/components/header.module.scss";
 
 const Header = () => {
   return (
@@ -8,17 +8,17 @@ const Header = () => {
       <Link href="/">
         <a>SHU ICHIHARA</a>
       </Link>
-      <nav className={styles["c-header__menu"]}>
-        <Link href="/">
-          <a>HOME</a>
-        </Link>
+      {/* <nav className={styles["c-header__menu"]}>
+          <Link href="/">
+            <a>HOME</a>
+          </Link>
         <Link href="/about">
           <a>ABOUT</a>
         </Link>
-        <Link href="/blogs">
+        <Link href="/blog">
           <a>BLOGS</a>
         </Link>
-      </nav>
+      </nav> */}
     </header>
   );
 };

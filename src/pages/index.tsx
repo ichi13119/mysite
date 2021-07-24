@@ -6,8 +6,10 @@ import { client } from "../libs/cmsClient";
 
 import { fetchFromCMS, Post } from "types";
 
-import styles from "../styles/home.module.scss";
-import NewPosts from "components/newPosts";
+import PostCard from "components/postCard";
+
+import styles from "../styles/blogs.module.scss";
+// import styles from "../styles/home.module.scss";
 
 type Props = {
   posts: Post[];
@@ -16,7 +18,18 @@ type Props = {
 const Home: React.FC<Props> = ({ posts }) => {
   return (
     <>
-      <Head>
+    <Head>
+        <title>Blogs</title>
+      </Head>
+      <div className={styles["p-blogs"]}>
+        <h1 className={styles["p-blogs__title"]}>Blogs</h1>
+        <ul className={styles["p-blogs__list"]}>
+          {posts.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
+        </ul>
+      </div>
+      {/* <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -24,12 +37,12 @@ const Home: React.FC<Props> = ({ posts }) => {
         <div className={styles["p-post__title"]}>New Posts</div>
         <ul className={styles["p-post__newPosts"]}>
           {posts.map((post) => (
-            <NewPosts key={post.id} post={post} />
+            <PostCard key={post.id} post={post} />
           ))}
         </ul>
         <div className={styles["p-post__link"]}>
-          <Link href="/blogs">
-            <a>Other Posts</a>
+          <Link href="/blog">
+            <a>Others</a>
           </Link>
         </div>
       </div>
@@ -46,20 +59,36 @@ const Home: React.FC<Props> = ({ posts }) => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
 
 export default Home;
 
+// export const getStaticProps: GetStaticProps = async () => {
+//   const res: fetchFromCMS = await client.get({
+//     endpoint: "blog",
+//     queries: {
+//       limit: 3,
+//       orders: "-createdAt",
+//     },
+//   });
+
+//   const posts: Post[] = res.contents;
+
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// };
+
 export const getStaticProps: GetStaticProps = async () => {
   const res: fetchFromCMS = await client.get({
     endpoint: "blog",
     queries: {
-      limit: 3,
-      fields: "id,title,createdAt,updatedAt,thumb",
-      orders: "-createdAt",
+      orders: "-updatedAt,-createdAt",
     },
   });
 

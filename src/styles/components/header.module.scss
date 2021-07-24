@@ -4,18 +4,59 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5rem;
+  height: 5rem;
+  padding: 0 5rem;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  box-shadow: #0288D1 0 1px 3px;
+  box-shadow: #0288d1 0 1px 3px;
+
+  @media only screen and (max-width: 1024px) {
+    padding: 0 2.5rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
+
+  @media only screen and (max-width: 599px) {
+    padding: 0 .25rem;
+    height: 2rem;
+    font-size: .75rem;
+  }
+
+  a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    /* 放射グラデーションイメージの位置を中央に設定 */
+    background-position: center;
+    /* background属性にアニメーションを0.4秒で設定 */
+    transition: background 0.4s;
+
+    &:hover {
+      /* 放射グラデーションイメージのサイズを拡大し要素を覆うように設定 */
+      background-size: 15000%;
+      background-image: radial-gradient(circle, transparent 1%, #03a9f4 1%);
+      /* ホバーしたときの背景色を設定 */
+      background-color: #03a9f4;
+    }
+    &:active {
+      /* 放射グラデーションイメージのサイズを元のサイズに戻すように設定 */
+      background-size: 100%;
+      /* ここではアニメーションを無効にするように設定 */
+      transition: background 0s;
+      background-color: #b3e5fc;
+    }
+  }
 
   &__menu {
     display: flex;
+    align-items: center;
+    height: 100%;
     font-size: 1.25rem;
 
     a:not(:last-child) {
-      margin-right: 4rem;
+      margin-right: 2rem;
     }
   }
 }

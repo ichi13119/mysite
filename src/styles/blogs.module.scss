@@ -1,0 +1,38 @@
+.p-blogs {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 3rem;
+    font-weight: 400;
+
+    @media only screen and (max-width: 1024px) {
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media only screen and (max-width: 599px) {
+      font-size: .75rem;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 599px) {
+      display: block;
+      padding: 0 3rem;
+    }
+
+    li {
+      margin-bottom: 3rem;
+
+      @media only screen and (max-width: 1024px) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
