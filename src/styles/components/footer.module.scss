@@ -47,6 +47,7 @@
 
       &-text {
         margin: 0;
+        font-size: 16px;
 
         p:nth-child(2) {
           font-size: 14px;
@@ -54,6 +55,10 @@
 
         @media only screen and (max-width: 599px) {
           margin-bottom: 0.5rem;
+
+          p:nth-child(2) {
+            font-size: 14px;
+          }
         }
       }
     }
