@@ -17,13 +17,15 @@ const Footer: React.FC = () => {
           <Image src={"/images/my_image.jpg"} width={250} height={250} />
         </div>
         <div className={styles["c-footer__about-detail"]}>
-          <p>SHU ICHIHARA</p>
-          <p>
-            スタートアップベンチャーでReact,Redux-toolkit,TypeScriptを使ってのフロントエンド開発、PHPを使ってのバックエンド開発をしています。
-            <br />
-            プライベートではNext.js,Python,Flutter辺りを触ってみたりしています。
-          </p>
-          <div className={styles["c-footer__links"]}>
+          <div className={styles["c-footer__about-detail-text"]}>
+            <p>SHU ICHIHARA</p>
+            <p>
+              スタートアップベンチャーでReact,Redux-toolkit,TypeScriptを使ってのフロントエンド開発、PHPを使ってのバックエンド開発をしています。
+              <br />
+              プライベートではNext.js,Python,Flutter辺りを触ってみたりしています。
+            </p>
+          </div>
+          <div className={styles["c-footer__about-links"]}>
             <ul>
               <li>
                 <FontAwesomeIcon icon={faTwitterSquare} />
@@ -34,7 +36,7 @@ const Footer: React.FC = () => {
             </ul>
             <Link href="/about">
               <a>
-                <span>More &#x27F6;</span>
+                <span>プロフィール詳細 &#x27F6;</span>
               </a>
             </Link>
           </div>

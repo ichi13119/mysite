@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import dayjs from "dayjs";
 
 import { Post } from "types";
@@ -14,12 +15,16 @@ const PostCard: React.FC<Props> = ({ post }) => {
     <Link href={`/blog/${post.id}`}>
       <li className={styles["c-postCard"]}>
         <a>
-          <img />
+          <div className={styles["c-postCard__img"]}>
+            {/* <Image src={"/images/my_image.jpg"} width={300} height={220} /> */}
+            <img src={"/images/my_image.jpg"} />
+          </div>
           <div className={styles["c-postCard__content"]}>
-            <div className={styles["c-postCard__content-title"]}>
+            <h2 className={styles["c-postCard__content-title"]}>
               {post.title}
-            </div>
+            </h2>
             <div
+            className={styles["c-postCard__content-body"]}
               dangerouslySetInnerHTML={{
                 __html: `${post.body}`,
               }}
