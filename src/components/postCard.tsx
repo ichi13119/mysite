@@ -24,12 +24,6 @@ const PostCard: React.FC<Props> = ({ post }) => {
             <h2 className={styles["c-postCard__content-title"]}>
               {post.title}
             </h2>
-            <div
-            className={styles["c-postCard__content-body"]}
-              dangerouslySetInnerHTML={{
-                __html: `${post.body}`,
-              }}
-            ></div>
             <div className={styles["c-postCard__content-date"]}>
               <span>{dayjs(post.createdAt).format("YYYY.MM.DD")}</span>
             </div>
