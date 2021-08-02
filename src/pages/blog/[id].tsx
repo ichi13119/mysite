@@ -15,7 +15,7 @@ const Blog: React.FC<Props> = ({ blog }) => {
       <Head>
         <title>{blog.title}</title>
       </Head>
-      <h1>{blog.title}</h1>
+      <h1 style={{ wordBreak: "break-all" }}>{blog.title}</h1>
       <div
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
