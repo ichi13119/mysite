@@ -15,15 +15,22 @@ export interface fetchFromCMS {
 }
 
 type ContactEvent = {
-  action: 'submit_form'
-  category: 'contact'
-  label: string
-}
+  action: "submit_form";
+  category: "contact";
+  label: string;
+};
 
 type ClickEvent = {
-  action: 'click'
-  category: 'other'
-  label: string
-}
+  action: "click";
+  category: "other";
+  label: string;
+};
 
-export type Event = ContactEvent | ClickEvent
+export type Event = ContactEvent | ClickEvent;
+
+declare global {
+  interface Window {
+    prerenderReady: boolean;
+    adsbygoogle: { [key: string]: unknown }[];
+  }
+}

@@ -1,15 +1,18 @@
-import Document, { Head, Main, NextScript } from 'next/document'
-import { existsGaId, GA_ID } from '../libs/gtag'
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { existsGaId, GA_ID } from "../libs/gtag";
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <html lang="ja">
+      <Html lang="ja">
         <Head>
           {/* Google Analytics */}
           {existsGaId && (
             <>
-              <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              />
               <script
                 dangerouslySetInnerHTML={{
                   __html: `
@@ -23,12 +26,17 @@ export default class MyDocument extends Document {
               />
             </>
           )}
+          {/* Google Adsense */}
+          <script
+            async
+            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          ></script>
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
-      </html>
-    )
+      </Html>
+    );
   }
 }

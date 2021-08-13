@@ -3,9 +3,11 @@ import { AppProps } from "next/app";
 import Layout from "components/layout";
 
 import usePageView from "../hooks/usePageView";
+import { useGoogleAdsense } from "hooks/useGoogleAdsense";
 
 function MyApp({ Component, pageProps }: AppProps) {
   usePageView();
+  useGoogleAdsense()
 
   return (
     <Layout>
