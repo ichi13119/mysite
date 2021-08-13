@@ -1,0 +1,37 @@
+.c-pegination {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: 1024px) {
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    color: #03a9f4;
+    font-size: 1rem;
+    padding: .25rem .5rem;
+    
+    &-current {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #03a9f4;
+      color: #fff;
+
+      a {
+        cursor: default;
+      }
+    }
+  }
+
+  .unvisible {
+    visibility: hidden;
+  }
+}

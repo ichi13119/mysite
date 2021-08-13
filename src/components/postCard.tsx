@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
 
-import { Post } from "types";
+import { Post } from "types/types";
 
 import styles from "../styles/components/postCard.module.scss";
 

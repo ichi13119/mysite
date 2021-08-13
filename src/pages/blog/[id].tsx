@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import { client } from "libs/cmsClient";
 
-import { fetchFromCMS, Post } from "types";
+import { fetchFromCMS, Post } from "types/types";
 
 type Props = {
   blog: Post;
