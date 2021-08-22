@@ -5,7 +5,6 @@ import {
   faTwitterSquare,
   faGithubSquare,
 } from "@fortawesome/free-brands-svg-icons";
-import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "../styles/components/footer.module.scss";
 

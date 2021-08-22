@@ -14,7 +14,6 @@ type Props = {
 };
 
 const DynamicPage: NextPage<Props> = ({ contents, totalCount, limit }) => {
-  console.log(contents);
   return (
     <>
       <Head>

@@ -18,7 +18,7 @@ const PostCard: React.FC<Props> = ({ post }) => {
           <div className={styles["c-postCard__img"]}>
             {/* <Image src={"/images/my_image.jpg"} width={300} height={220} /> */}
             {/* <img/> */}
-            <img src={"/images/my_image.jpg"} />
+            <img src={post.thumbnail.url} />
           </div>
           <div className={styles["c-postCard__content"]}>
             <h2 className={styles["c-postCard__content-title"]}>

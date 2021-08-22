@@ -1,7 +1,6 @@
 import { useEffect, useCallback } from "react";
 
 export const useGoogleAdsense = () => {
-  console.log("test");
   const loadAd = useCallback(() => {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);

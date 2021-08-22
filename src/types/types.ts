@@ -1,10 +1,16 @@
+interface ThumbnailData {
+  url: string;
+  width: number;
+  height: number;
+}
+
 export interface Post {
   id: string;
   title: string;
   body: string;
   createdAt: string;
   updatedAt: string;
-  thumb?: string;
+  thumbnail?: ThumbnailData;
 }
 
 export interface fetchFromCMS {
