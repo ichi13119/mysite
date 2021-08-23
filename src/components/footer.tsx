@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
     <footer className={styles["c-footer"]}>
       <div className={styles["c-footer__about"]}>
         <div className={styles["c-footer__about-img"]}>
-          <Image src={"/images/my_image.jpg"} width={250} height={250} />
+          <Image src={"/images/my_image.jpg"} width={300} height={300} />
         </div>
         <div className={styles["c-footer__about-detail"]}>
           <div className={styles["c-footer__about-detail-text"]}>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={styles["c-footer__copy"]}>コピーライト</div>
+      <div className={styles["c-footer__copy"]}>© 2021 SHU ICHIHARA</div>
     </footer>
   );
 };

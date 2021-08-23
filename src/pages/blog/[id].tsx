@@ -5,23 +5,26 @@ import { client } from "libs/cmsClient";
 
 import { fetchFromCMS, Post } from "types/types";
 
+import styles from '../../styles/content.module.scss';
+
 type Props = {
   blog: Post;
 };
 
 const Blog: React.FC<Props> = ({ blog }) => {
   return (
-    <>
+    <div className={styles["p-content"]}>
       <Head>
         <title>{blog.title}</title>
       </Head>
-      <h1 style={{ wordBreak: "break-all" }}>{blog.title}</h1>
+      <h1 className={styles["p-content__title"]}>{blog.title}</h1>
       <div
+      className={styles["p-content__body"]}
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
       ></div>
-    </>
+    </div>
   );
 };
 
