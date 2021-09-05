@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
     endpoint: "blog",
     queries: {
       orders: "-createdAt",
-      limit: 3,
+      limit: 9,
     },
   });
 

@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const contents: fetchFromCMS = await client.get({
     endpoint: "blog",
     queries: {
-      limit: 1,
+      limit: 9,
     },
   });
 
@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const contents: fetchFromCMS = await client.get({
     endpoint: "blog",
     queries: {
-      limit: 1,
+      limit: 9,
       offset: Math.ceil(Number.parseInt(offset, 10) - 1),
     },
   });
