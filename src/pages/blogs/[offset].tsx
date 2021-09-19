@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { client } from "libs/cmsClient";
-import { fetchFromCMS, Post } from "types/types";
+import { FetchFromCMS, Post } from "types/types";
 import PostCard from "components/postCard";
 import Pagination from "components/Pagination";
 
@@ -33,7 +33,7 @@ const DynamicPage: NextPage<Props> = ({ contents, totalCount, limit }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const contents: fetchFromCMS = await client.get({
+  const contents: FetchFromCMS = await client.get({
     endpoint: "blog",
     queries: {
       limit: 9,
@@ -50,7 +50,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const offset = params?.offset ? String(params?.offset) : "0";
 
-  const contents: fetchFromCMS = await client.get({
+  const contents: FetchFromCMS = await client.get({
     endpoint: "blog",
     queries: {
       limit: 9,

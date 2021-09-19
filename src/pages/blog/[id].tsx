@@ -3,9 +3,9 @@ import Head from "next/head";
 
 import { client } from "libs/cmsClient";
 
-import { fetchFromCMS, Post } from "types/types";
+import { FetchFromCMS, Post } from "types/types";
 
-import styles from '../../styles/content.module.scss';
+import styles from "../../styles/content.module.scss";
 
 type Props = {
   blog: Post;
@@ -19,7 +19,7 @@ const Blog: React.FC<Props> = ({ blog }) => {
       </Head>
       <h1 className={styles["p-content__title"]}>{blog.title}</h1>
       <div
-      className={styles["p-content__body"]}
+        className={styles["p-content__body"]}
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
@@ -29,9 +29,11 @@ const Blog: React.FC<Props> = ({ blog }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data: fetchFromCMS = await client.get({
+  const data: FetchFromCMS = await client.get({
     endpoint: "blog",
   });
+
+  console.log(data);
 
   const paths = data.contents.map((content) => `/blog/${content.id}`);
   return { paths, fallback: false };
@@ -39,11 +41,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id as string; //デフォルトではstring | string[]
-  const data = await client.get({ endpoint: "blog", contentId: id });
+  const data: Post = await client.get({
+    endpoint: "blog",
+    contentId: id,
+  });
+
+  console.log(data);
+
+  const body = data.body
+    .map((item) => item.content)
+    .reduce((acc, cur) => acc + " " + cur);
 
   return {
     props: {
-      blog: data,
+      blog: { ...data, body: body },
     },
   };
 };

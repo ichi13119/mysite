@@ -7,13 +7,18 @@ interface ThumbnailData {
 export interface Post {
   id: string;
   title: string;
-  body: string;
+  body: CMSContents[];
   createdAt: string;
   updatedAt: string;
   thumbnail?: ThumbnailData;
 }
 
-export interface fetchFromCMS {
+type CMSContents = {
+  fieldId: string;
+  content: string;
+}
+
+export interface FetchFromCMS {
   contents: Post[];
   limit: number;
   offset: number;

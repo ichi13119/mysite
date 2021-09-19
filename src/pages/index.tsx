@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 
 import { client } from "../libs/cmsClient";
 
-import { fetchFromCMS, Post } from "types/types";
+import { FetchFromCMS, Post } from "types/types";
 
 import PostCard from "components/postCard";
 
@@ -41,7 +41,7 @@ const Home: React.FC<Props> = ({ posts }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res: fetchFromCMS = await client.get({
+  const res: FetchFromCMS = await client.get({
     endpoint: "blog",
     queries: {
       orders: "-createdAt",
