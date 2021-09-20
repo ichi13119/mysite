@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
-import PostCard from "../../components/postCard";
+import PostCard from "../../components/PostCard";
 
 import { client } from "libs/cmsClient";
 

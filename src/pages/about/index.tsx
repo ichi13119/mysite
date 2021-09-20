@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Timeline from "components/timeline";
+import Timeline from "components/Timeline";
 
 import styles from "../../styles/about.module.scss";
 

@@ -5,7 +5,7 @@ import { client } from "../libs/cmsClient";
 
 import { FetchFromCMS, Post } from "types/types";
 
-import PostCard from "components/postCard";
+import PostCard from "components/PostCard";
 
 import styles from "../styles/blogs.module.scss";
 import Link from "next/link";

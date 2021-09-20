@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { client } from "libs/cmsClient";
 import { FetchFromCMS, Post } from "types/types";
-import PostCard from "components/postCard";
+import PostCard from "components/PostCard";
 import Pagination from "components/Pagination";
 
 import styles from "../../styles/blogs.module.scss";

@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import { AppProps } from "next/app";
-import Layout from "components/layout";
+import Layout from "components/Layout";
 
 import usePageView from "../hooks/usePageView";
 import { useGoogleAdsense } from "hooks/useGoogleAdsense";
