@@ -10,22 +10,21 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/lab": "^4.0.0-alpha.60",
-    "@types/material-ui": "^0.21.9",
-    "@types/nodemailer": "^6.4.4",
+    "@hookform/resolvers": "^2.8.1",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "dayjs": "^1.10.6",
     "microcms-js-sdk": "^1.2.0",
     "next": "^11.0.1",
-    "nodemailer": "^6.6.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.15.4",
     "react-moment": "^1.1.1",
-    "sass": "^1.35.2"
+    "sass": "^1.35.2",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@types/gtag.js": "0.0.7",

@@ -1,24 +1,36 @@
-import { createTransport, Transporter } from 'nodemailer';
-import SMTPTransport from 'nodemailer/lib/smtp-transport';
+import { NextApiResponse, NextApiRequest } from "next";
+import { isContact } from "../../utils/TypeGuardUtils";
 
-export default async (req, res) => {
-  const transporter: Transporter<SMTPTransport.SentMessageInfo> = createTransport({
-    service: 'gmail',
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS,
+const contact = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> => {
+  const WRITE_API_KEY = process.env.WRITE_API_KEY;
+
+  // クエリとAPIキーのチェック
+  if (!isContact(req.body) || typeof WRITE_API_KEY === "undefined") {
+    return res.status(404).end();
+  }
+
+  const content = await fetch(`https://ichiblo.microcms.io/api/v1/contact/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "X-WRITE-API-KEY": WRITE_API_KEY,
     },
-  });
-  await transporter.sendMail({
-    from: process.env.MAIL_FROM,
-    to: process.env.MAIL_TO,
-    subject: 'お問い合わせ',
-    text: req.body,
-  });
+    body: JSON.stringify(req.body),
+  })
+    .then(() => "Created")
+    .catch(() => null);
 
-  res.status(200).json({
-    success: true,
-  });
+  // CMS側で正しく作成されたかチェック
+  if (content !== "Created") {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+
+  res.status(200).json({ message: "OK!" });
+
+  res.end();
 };
+
+export default contact;

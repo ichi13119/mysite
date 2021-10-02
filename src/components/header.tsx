@@ -8,7 +8,7 @@ const Header = () => {
       <Link href="/">
         <a>SHU ICHIHARA</a>
       </Link>
-      {/* <nav className={styles["c-header__menu"]}>
+      <nav className={styles["c-header__menu"]}>
           <Link href="/">
             <a>HOME</a>
           </Link>
@@ -18,7 +18,10 @@ const Header = () => {
         <Link href="/blog">
           <a>BLOGS</a>
         </Link>
-      </nav> */}
+        <Link href="/contact">
+          <a>CONTACT</a>
+        </Link>
+      </nav>
     </header>
   );
 };

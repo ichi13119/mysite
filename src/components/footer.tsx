@@ -7,7 +7,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import styles from "../styles/components/footer.module.scss";
-import { Contact } from "./Contact";
 
 const Footer: React.FC = () => {
   return (

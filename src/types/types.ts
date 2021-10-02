@@ -16,7 +16,7 @@ export interface Post {
 type CMSContents = {
   fieldId: string;
   content: string;
-}
+};
 
 export interface FetchFromCMS {
   contents: Post[];
@@ -38,6 +38,21 @@ type ClickEvent = {
 };
 
 export type Event = ContactEvent | ClickEvent;
+
+export interface Contact {
+  name: string;
+  email: string;
+  body: string;
+}
+
+export const FORM_STATE = {
+  PENDING: "Pending",
+  PROCESSING: "Processing",
+  SUCCESS: "Success",
+  FAILED: "Failed",
+};
+
+export type FORM_STATE = typeof FORM_STATE[keyof typeof FORM_STATE];
 
 declare global {
   interface Window {
