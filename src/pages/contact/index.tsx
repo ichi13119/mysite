@@ -4,16 +4,16 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCheckCircle,
+  faTimesCircle,
+} from "@fortawesome/free-regular-svg-icons";
 
 import ModalWrapper from "components/ModalWrapper";
 
 import { FORM_STATE } from "types/types";
 
-import styles from "../../styles/Contact.module.scss";
-import {
-  faCheckCircle,
-  faTimesCircle,
-} from "@fortawesome/free-regular-svg-icons";
+import styles from "../../styles/contact.module.scss";
 
 type FormData = {
   name: string;
@@ -22,7 +22,7 @@ type FormData = {
 };
 
 const Contact: React.FC = () => {
-  const [formState, setFormState] = useState<FORM_STATE>(FORM_STATE.SUCCESS);
+  const [formState, setFormState] = useState<FORM_STATE>(FORM_STATE.PENDING);
 
   const schema = yup
     .object({

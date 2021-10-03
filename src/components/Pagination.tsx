@@ -7,7 +7,7 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "../styles/components/Pagination.module.scss";
+import styles from "../styles/components/pagination.module.scss";
 
 type Props = {
   totalCount: number;
