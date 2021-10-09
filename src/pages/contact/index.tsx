@@ -8,6 +8,7 @@ import {
   faCheckCircle,
   faTimesCircle,
 } from "@fortawesome/free-regular-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import ModalWrapper from "components/ModalWrapper";
 
@@ -58,25 +59,25 @@ const Contact: React.FC = () => {
       case FORM_STATE.SUCCESS:
         return (
           <>
+            <FontAwesomeIcon icon={faTimes} className={styles["close"]} />
             <div
               className={`${styles["c-contact__modal-message"]} ${styles["success"]}`}
             >
               <FontAwesomeIcon icon={faCheckCircle} />
               <p>お問い合わせを送信しました</p>
             </div>
-            <button onClick={handleModalClose}>閉じる</button>
           </>
         );
       case FORM_STATE.FAILED:
         return (
           <>
+            <FontAwesomeIcon icon={faTimes} className={styles["close"]} />
             <div
               className={`${styles["c-contact__modal-message"]} ${styles["failed"]}`}
             >
               <FontAwesomeIcon icon={faTimesCircle} />
               <p>送信に失敗しました</p>
             </div>
-            <button onClick={handleModalClose}>閉じる</button>
           </>
         );
     }

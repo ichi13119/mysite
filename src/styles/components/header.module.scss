@@ -6,7 +6,7 @@
   align-items: center;
   height: 5rem;
   padding: 0 5rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   box-shadow: #0288d1 0 1px 3px;
@@ -14,20 +14,20 @@
   @media only screen and (max-width: 1024px) {
     padding: 0 2rem;
     height: 3rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   @media only screen and (max-width: 599px) {
-    padding: 0 .25rem;
+    padding: 0 1rem;
     height: 2rem;
-    font-size: .25rem;
+    font-size: 0.75rem;
   }
 
   a {
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 1rem;
+    // padding: 0 1rem;
     /* 放射グラデーションイメージの位置を中央に設定 */
     background-position: center;
     /* background属性にアニメーションを0.4秒で設定 */
@@ -56,10 +56,22 @@
 
     a:not(:last-child) {
       margin-right: 2rem;
-      
+
       @media only screen and (max-width: 1024px) {
         margin-right: 1rem;
       }
+    }
+
+    @media only screen and (max-width: 599px) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @media only screen and (max-width: 599px) {
+      display: block;
     }
   }
 }

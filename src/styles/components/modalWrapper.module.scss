@@ -17,5 +17,10 @@
     border-radius: 8px;
     width: 400px;
     height: 240px;
+
+    @media only screen and (max-width: 599px) {
+      width: 280px;
+      height: 160px;
+    }
   }
 }
